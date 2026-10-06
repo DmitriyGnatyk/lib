@@ -1882,7 +1882,7 @@ function Library:CreateWindow(opts)
     -- Zoom factor applied to the logo inside its clipping holder. The default
     -- asset is mostly transparent padding, so it needs a healthy zoom to read;
     -- a caller-supplied logo is assumed to be already cropped.
-    local logoZoom       = math.clamp(tonumber(opts.LogoZoom) or (logoAsset == DEFAULT_LOGO and 2.4 or 1), 1, 6)
+    local logoZoom = math.clamp(tonumber(opts.LogoZoom) or 0.85, 0.4, 6)
     local windowSize     = opts.Size or UDim2.fromOffset(700, 490)
     local windowPosition = opts.Position or UDim2.fromScale(0.5, 0.5)
     local guiName        = opts.GuiName or "OxideUI"
